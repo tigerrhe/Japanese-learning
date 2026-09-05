@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { starEdges } from '../data/grammarNodes'
 import { LEVELS } from '../data/types'
 import { useLevelFilter } from '../engine/LevelContext'
@@ -23,7 +24,8 @@ const EDGE_COLOR: Record<string, string> = {
 export function StarMap() {
   const { includesLevel } = useLevelFilter()
   const positions = useMemo(() => computeLayout(), [])
-  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [searchParams] = useSearchParams()
+  const [selectedId, setSelectedId] = useState<string | null>(() => searchParams.get('node'))
   const [, forceRerender] = useState(0)
 
   const selectedNode = selectedId ? starNodeById.get(selectedId) : undefined

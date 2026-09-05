@@ -22,6 +22,14 @@ export function NavBar() {
             总览
           </NavLink>
           <NavLink
+            to="/textbook"
+            className={({ isActive }) =>
+              `${linkBase} ${isActive ? 'bg-indigo-500 text-white' : 'text-slate-300 hover:bg-slate-800'}`
+            }
+          >
+            教材
+          </NavLink>
+          <NavLink
             to="/starmap"
             className={({ isActive }) =>
               `${linkBase} ${isActive ? 'bg-indigo-500 text-white' : 'text-slate-300 hover:bg-slate-800'}`

@@ -57,7 +57,12 @@ export function Dashboard() {
         </div>
       </section>
 
-      <section className="mt-8 grid gap-4 sm:grid-cols-3">
+      <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ModuleCard
+          to="/textbook"
+          title="教材思维导图"
+          desc="按《大家的日本语》课程顺序梳理，每课的词汇/语法/注意点都做成可点击的思维导图。"
+        />
         <ModuleCard
           to="/starmap"
           title="知识星图"
